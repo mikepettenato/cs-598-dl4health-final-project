@@ -2,4 +2,5 @@ Notes:
 Unmodified training set saved as msr_paraphrase_train_org.txt
 
 msr_paraphrase_train.txt
-line 21 -> stanza parser was unable to parse string2.  Made small modification so at least parser could process the sentence correctly
+line 21 -> stanza parser was unable to parse string2.  Made small modification so parser could process the sentence correctly
+line 179 -> stanza parser was unable to parse string1. Made small modification so parser could process the sentence correctly
