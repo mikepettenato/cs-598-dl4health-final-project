@@ -17,13 +17,5 @@ def test_word2vec():
 test_word2vec()
 
 
-def corpus_embeddings(model, corpus, max_sentence_len):
-    corpus_size = len(corpus)
-    embeddings_list = []
-    embedding_matrix = np.zeros((corpus_size, max_sentence_len, 50))
-    for i, sentence in enumerate(corpus):
-        embeddings = sentence_embeddings(model, sentence, size=(max_sentence_len, 50))
-        embedding_matrix[i] = embeddings
-        embeddings_list.append(embeddings)
 
-    return embedding_matrix
+
