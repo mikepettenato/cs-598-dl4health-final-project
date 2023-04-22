@@ -1,0 +1,81 @@
+
+
+# # set 'download_method = None' to not download the resources over and over
+# nlp = stanza.Pipeline(lang='en', processors='tokenize,pos,constituency', download_method=None, use_gpu=False)
+
+# def trunk_construction(str, parent_label = None):
+#     doc = nlp(str)
+#     tree = doc.sentences[0].constituency
+
+#     words = construct_sentence(tree, parent_label)
+#     return ' '.join(words)
+
+# def construct_sentence(tree, parent_label = None, leave_pos=False):
+
+#     sentences = []
+#     if 'NN' in tree.label:
+#         if parent_label == 'NP':
+#             # sentences.append(tree)
+#             sentences = sentences + tree.leaf_labels()
+#     if 'VB' in tree.label:
+#         if parent_label == 'VP':
+#             #sentences.append(tree)
+#             sentences = sentences + tree.leaf_labels()
+#     for child in tree.children:
+#         sentences = sentences + construct_sentence(child, tree.label)
+
+#     return sentences
+
+#  def test_parser(str, valid_subject, valid_predicate, valid_object):
+
+#     #new_sentence = trunk_construction(str)
+#     #print(new_sentence)
+#     #assert new_sentence == valid_sentence
+
+#     doc = nlp(str)
+#     tree = doc.sentences[0].constituency
+
+#     subject_list, predicate_list, object_list = find_spo(tree)
+#     print(f"Subject = {' '.join(subject_list)}")
+#     print(f"Predicate = {' '.join(predicate_list)}")
+#     print(f"Object = {' '.join(object_list)}")
+
+#     print(f"{subject_list} = {valid_subject}")
+#     print(f"{predicate_list} = {valid_predicate}")
+#     print(f"{object_list} = {valid_object}")
+#     assert subject_list == valid_subject
+#     assert predicate_list == valid_predicate
+#     assert object_list == valid_object
+
+
+
+test_parser(""""We have an incredible amount of work to do, but it is not in [designing new] instruction set architectures.""", [], ['have', 'do', 'is', 'designing'], ['amount', 'work', 'set', 'architectures'])
+test_parser("""We have got an incredible amount of work to do, but it ain't in the instruction set," he said.""",  ['instruction', 'set'], ['have', 'got', 'do', 'said'], ['amount', 'work'])
+test_parser('Syrian forces launch new attacks', ['forces'], ['launch'], ['attacks'])
+test_parser("""the flat tire was replaced by the driver""", ['tire'], ['was', 'replaced'], ['driver'])
+test_parser("""Amrozi accused his brother, whom he called "the witness", of deliberately distorting his evidence.""",
+            ['Amrozi'], ['accused', 'called', 'distorting'], ['brother',  'witness', 'evidence'])
+test_parser("""Referring to him as only "the witness", Amrozi accused his brother of deliberately distorting his evidence.""",
+         ['Amrozi'], ['Referring', 'accused', 'distorting'], ['witness', 'brother', 'evidence'])
+test_parser("""Shares of Genentech, a much larger company with several products on the market, rose more than 2 percent""",
+            ['Shares', 'Genentech', 'company', 'products', 'market'], ['rose'], ['percent'])
+
+test_parser("""Shares of Xoma fell 16 percent in early trade, while shares of Genentech, a much larger company with several products on the market, were up 2 percent.""", ['Shares', 'Xoma'], ['fell', 'were'], ['percent', 'trade', 'shares', 'Genentech', 'company', 'products', 'market'])
+
+test_parser("""Gyorgy Heizler, head of the local disaster unit, said the coach was carrying 38 passengers.""",
+              ['Gyorgy', 'Heizler', 'head', 'disaster', 'unit'], ['said', 'was', 'carrying'], ['coach', 'passengers'])
+test_parser("""The head of the local disaster unit, Gyorgy Heizler, said the coach driver had failed to heed red stop lights.""",
+            ['head', 'disaster', 'unit', 'Gyorgy', 'Heizler'], ['said', 'had', 'failed', 'heed'], ['coach', 'driver', 'stop', 'lights'])
+# test_parser("""His wife said he was "100 percent behind George Bush" and looked forward to using his years of training in the war.""",
+#             "wife said was percent George Bush looked using years training war")
+test_parser("""Sheena Young of Child, the national infertility support network, hoped the guidelines would lead to a more "fair and equitable" service for infertility sufferers""", ['Sheena', 'Young', 'Child', 'network'], ['hoped', 'lead'], ['guidelines', 'service', 'infertility', 'sufferers'])
+test_parser("""Sheena Young, for Child, the national infertility support network, said the proposed guidelines should lead to a more "fair and equitable" service for infertility sufferers.""", ['Sheena', 'Young', 'Child', 'network'], ['said', 'lead'], ['guidelines', 'service', 'infertility', 'sufferers'])
+#
+# test_parser("""Among CNN viewers, 29 percent said they were Republicans and 36 percent called themselves conservatives.""",
+#             "CNN viewers percent said were Republicans percent called conservatives")
+# test_parser("""Out of Fox viewers, 41 percent describe themselves as Republicans, 24 percent as Democrats and 30 percent as Independents""",
+#             "Fox viewers percent describe Republicans percent Democrats percent Independents")
+
+# Note: stanza parser has a problem with the below sentence.  It is unable to parse it correctly
+# test_parser("""Sheena Young, for Child, the national infertility support network, said the proposed guidelines should lead to a more "fair and equitable" service for infertility sufferers.""", "")
+# test_parser("""Among Fox viewers, 41 percent describe themselves as Republicans, 24 percent as Democrats and 30 percent as Independents""", "Fox viewers percent describe Republicans percent Democrats percent Independents")
