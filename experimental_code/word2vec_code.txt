@@ -1,0 +1,29 @@
+def test_word2vec():
+
+    df = read_file('data/msr_paraphrase_train.txt')
+
+    sentences1 = df.String1[:5].apply(gensim.utils.simple_preprocess)
+    sentences2 = df.String2[:5].apply(gensim.utils.simple_preprocess)
+
+    corpus = pd.concat([sentences1, sentences2], ignore_index=True)
+
+    max_sentence_len = corpus.apply(len).max()
+
+    model = generate_word2vec_model(corpus)
+
+    embedding = sentence_embeddings(model, corpus[0], (max_sentence_len, 50))
+    assert embedding.shape == (max_sentence_len, 50)
+
+test_word2vec()
+
+
+def corpus_embeddings(model, corpus, max_sentence_len):
+    corpus_size = len(corpus)
+    embeddings_list = []
+    embedding_matrix = np.zeros((corpus_size, max_sentence_len, 50))
+    for i, sentence in enumerate(corpus):
+        embeddings = sentence_embeddings(model, sentence, size=(max_sentence_len, 50))
+        embedding_matrix[i] = embeddings
+        embeddings_list.append(embeddings)
+
+    return embedding_matrix
