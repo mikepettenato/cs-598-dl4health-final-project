@@ -1,0 +1,15 @@
+def conv_output_volume(W, F, S, P):
+
+    """
+    TODO: Given the input volume size $W$, the kernel/filter size $F$,
+    the stride $S$, and the amount of zero padding $P$ used on the border,
+    calculate the output volume size.
+    Note the output should a integer.
+    """
+
+    # your code here
+    #https://cs231n.github.io/convolutional-networks/
+
+    return int((W-F+2*P)/S+1)
+	
+print(conv_output_volume(50, 3, 1, 1))
