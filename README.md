@@ -23,7 +23,6 @@ Our approach mirrored the original paper's approach for the most part. It is bro
 <div>
     <figure>
         <img src="./images/overview.png" width="500"/>
-        <figcaption align='center'>Figure 1: Overview of the Approach</figcaption>
     </figure>
 </div>
 
@@ -110,7 +109,6 @@ Our model achieves the following performance on :
 <div>
     <figure>
         <img src="./images/results.png" width="1000"/>
-        <figcaption align='center'>Comparison of Results</figcaption>
     </figure>
 </div>
 
