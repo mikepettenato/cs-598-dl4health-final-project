@@ -35,7 +35,9 @@ In order to validate some of the claims from the original paper, we introduced s
 - `SpaCy`: Model that leverages a SpaCy parser and a `Word2Vec` model trained on the data set used for our reproduction.
 - `Raw`: Model that doesn't leverage any parser and uses `Word2Vec` for embedding.
 
-After training and adjusting hyperparameters we found that a pre-trained `Word2Vec` model had the largest impact on model performance. The `Stanza-Google` variant had the highest accuracy and f1 score at `0.7026086956521739` and `0.801853997682503` respectively.  
+After training and adjusting hyperparameters we found that a pre-trained `Word2Vec` model had the largest impact on model performance. The `Stanza-Google` variant had the highest accuracy and f1 score at `0.7026086956521739` and `0.801853997682503` respectively.
+
+We found that increased accuracy comes with a training performance cost. The training time is slower due to the increased size of the embedding and the increased number of parameters.
 
 ## Requirements
 
