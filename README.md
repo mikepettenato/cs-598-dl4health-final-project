@@ -28,12 +28,44 @@ Use the following command to install the required packages in your python enviro
 pip install -r requirements.txt
 ```
 
+Additionally, the notebook requires a download of the SpaCy parser model. Please refer to the _Pre-trained Models_ section below for installation instructions.
+
+
 ### Data
 
 For this reproduction, we have opted to use the [Microsoft Research Paraphrase Corpus](https://www.microsoft.com/en-us/download/details.aspx?id=52398). This dataset contains 5800 sentence pairs along with human annotations on the similarity between sentence in the pairs. 
 
-This dataset has already been download and formatted for the notebook. It is available under the `/data` directory.
+This dataset has already been download and formatted for the notebook. It is available under the `/data/` directory.
 
+### Pre-trained Models
+
+The original paper makes use of a Stanford Parser, so we leveraged the python `stanza` package for this requirement. In the notebook we leverage the default stanza model with the following parameters:
+
+```python
+import stanza
+stanza.Pipeline(lang='en', processors='tokenize,pos,constituency', download_method=None, use_gpu=True)
+```
+
+As part of the ablations performed, we introduced additional models that have been pre-trained for parsing and embedding.
+
+For parsing, the notebook also uses the `spacy` package as a parser. While the package install is part of `requirements.txt`, it is recommended to download the model seperately using the code snippet below.
+
+```shell
+python -m spacy download en_core_web_sm
+```
+*If you work with multiple environments, make sure it is being downloaded to the correct one!*
+
+Additional details on SpaCy can be found on their [website](https://spacy.io/usage).
+
+
+For embedding, the notebook leverages a pre-trained `Word2Vec` model available from the `gensim` package.
+
+- [google-news-word2vec-model](https://radimrehurek.com/gensim/models/word2vec.html) 
+
+```python
+import gensim.downloader as api
+model = api.load("word2vec-google-news-300")  # download the model and return as object ready for use
+```
 
 ## Training & Evaluation
 
@@ -41,13 +73,7 @@ Training and evaluation can be done by opening the jupyter notebook, `main.ipynb
 
 >📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
 
-## Pre-trained Models
 
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
->📋  Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
 
 ## Results
 
