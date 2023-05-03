@@ -22,7 +22,7 @@ Our approach mirrored the original paper's approach for the most part. It is bro
 
 <div>
     <figure>
-        <img src="./images/overview.png" width="500"/>
+        <img src="./images/cnn_model.png" width="500"/>
     </figure>
 </div>
 
