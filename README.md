@@ -98,16 +98,16 @@ Training and evaluation can be done by opening the jupyter notebook, `main.ipynb
 
 ### Hyperparameters
 
-
-
->📋  Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
-
+| Model Type    | # Epochs | Embedding_dim | Num_filters | Sent Vector Size | lr   |
+|---------------|----------|---------------|-------------|------------------|------|
+| Stanza-MSRP   | 80       | 50            | 150         | 300              | 0.01 |
+| Stanza-Google | 20       | 300           | 500         | 1000             | 0.01 |
+| SpaCy         | 80       | 50            | 150         | 300              | 0.01 |
+| Raw           | 80       | 50            | 150         | 300              | 0.01 |
 
 ## Results
 
-Our model achieves the following performance on :
-
+The `Stanza-Goolge` model had the best results with an accuracy of ` 0.708` and an F1 score of `0.816`. In general we found that our results supported the claims made in the original paper. `Stanza-Google` also had the longest training time.
 <div>
     <figure>
         <img src="./images/results.png" width="1000"/>
