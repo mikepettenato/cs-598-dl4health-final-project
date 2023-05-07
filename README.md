@@ -60,7 +60,11 @@ Additionally, the notebook requires a download of the SpaCy parser model. Please
 
 For this reproduction, we have opted to use the [Microsoft Research Paraphrase Corpus](https://www.microsoft.com/en-us/download/details.aspx?id=52398). This dataset contains 5800 sentence pairs along with human annotations on the similarity between sentence in the pairs. 
 
-This dataset has already been download and formatted for the notebook. It is available under the `/data/` directory.
+For convenience, we have included the following files to reduce time required to run the notebook. They are available under the `/data/` directory. 
+
+:exclamation: It is highly encouraged to use the provided files rather than parse files live. :exclamation:
+Parse timings are provided in the [whitepaper](https://github.com/mikepettenato/cs-598-dl4health-final-project/blob/d83b2f6ea10871935ce5d074944c649baee5d1a7/deliverables/Reproducibility%20Project%20-%20CS598%20Deep%20Learning%20for%20Healthcare.pdf). 
+
 
 ### Pre-trained Models
 
