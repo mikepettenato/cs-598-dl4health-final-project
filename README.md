@@ -58,9 +58,33 @@ Additionally, the notebook requires a download of the SpaCy parser model. Please
 
 ### Data
 
-For this reproduction, we have opted to use the [Microsoft Research Paraphrase Corpus](https://www.microsoft.com/en-us/download/details.aspx?id=52398). This dataset contains 5800 sentence pairs along with human annotations on the similarity between sentence in the pairs. 
+For this reproduction, we have opted to use the [Microsoft Research Paraphrase Corpus](https://www.microsoft.com/en-us/download/details.aspx?id=52398). This dataset contains 5800 sentence pairs along with human annotations on the similarity between sentence in the pairs.
 
-For convenience, we have included the following files to reduce time required to run the notebook. They are available under the `/data/` directory. 
+For convenience, we have included the following files to reduce time required to run the notebook. They are available under the `/data/` directory.
+
+Both the MSRP training and test datasets are available in the /data/ directory.  
+
+Additionally, there are files that represent the intermediate files for the various preprocessing techniques used in this project.  
+Preprocessing the data can take a while, and these files are used to cache the preprocessing step.  Below is a list of the files and a brief description.
+
+| File Name                       | Description                                                          |
+|---------------------------------|----------------------------------------------------------------------|
+| msr_paraphrase_train.txt        | MSRP training dataset file                                           |
+| msr_paraphrase_test.txt         | MSRP test dataset file                                               |
+| msr_paraphrase_train_spacy.txt  | SpaCy intermediate sentence representation of MSRP training dataset  |  
+| msr_paraphrase_test_spacy.txt   | SpaCy intermediate sentence representation of MSRP test dataset      |
+| msr_paraphrase_train_stanza.txt | Stanza intermediate sentence representation of MSRP training dataset |
+| msr_paraphrase_test_stanza.txt  | Stanza intermediate sentence representation of MSRP test dataset     |
+
+The /results/ directory contains the results of the various training and test runs that were performed by the find_training_parameters() function in the main.ipynb file while trying to find the optimal hyperparameters for the model.
+
+| File Name                       | Description                                                                                                                               |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| config.stanza.google.csv        | CSV file representing the various parameters used during training and testing runs and the results for the stanza-google configured model |
+| config-stanza-msrp.csv          | CSV file representing the various parameters used during training and testing runs and the results for the stanza-msrp configured model   |
+
+
+
 
 :exclamation: It is highly encouraged to use the provided files rather than parse files live. :exclamation:
 Parse timings are provided in the [whitepaper](https://github.com/mikepettenato/cs-598-dl4health-final-project/blob/d83b2f6ea10871935ce5d074944c649baee5d1a7/deliverables/Reproducibility%20Project%20-%20CS598%20Deep%20Learning%20for%20Healthcare.pdf). 
