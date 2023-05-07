@@ -86,8 +86,7 @@ The /results/ directory contains the results of the various training and test ru
 
 
 
-:exclamation: It is highly encouraged to use the provided files rather than parse files live. :exclamation:
-Parse timings are provided in the [whitepaper](https://github.com/mikepettenato/cs-598-dl4health-final-project/blob/d83b2f6ea10871935ce5d074944c649baee5d1a7/deliverables/Reproducibility%20Project%20-%20CS598%20Deep%20Learning%20for%20Healthcare.pdf). 
+:exclamation: It is highly encouraged to use the provided files rather than parse files in realtime due to time spent parsing. 
 
 
 ### Pre-trained Models
