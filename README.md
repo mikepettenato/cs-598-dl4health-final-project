@@ -69,19 +69,19 @@ Preprocessing the data can take a while, and these files are used to cache the p
 
 | File Name                       | Description                                                          |
 |---------------------------------|----------------------------------------------------------------------|
-| msr_paraphrase_train.txt        | MSRP training dataset file                                           |
-| msr_paraphrase_test.txt         | MSRP test dataset file                                               |
-| msr_paraphrase_train_spacy.txt  | SpaCy intermediate sentence representation of MSRP training dataset  |  
-| msr_paraphrase_test_spacy.txt   | SpaCy intermediate sentence representation of MSRP test dataset      |
-| msr_paraphrase_train_stanza.txt | Stanza intermediate sentence representation of MSRP training dataset |
-| msr_paraphrase_test_stanza.txt  | Stanza intermediate sentence representation of MSRP test dataset     |
+| /data/msr_paraphrase_train.txt  | MSRP training dataset file                                           |
+| /data/msr_paraphrase_test.txt         | MSRP test dataset file                                               |
+| /data/msr_paraphrase_train_spacy.txt  | SpaCy intermediate sentence representation of MSRP training dataset  |  
+| /data/msr_paraphrase_test_spacy.txt   | SpaCy intermediate sentence representation of MSRP test dataset      |
+| /data/msr_paraphrase_train_stanza.txt | Stanza intermediate sentence representation of MSRP training dataset |
+| /data/msr_paraphrase_test_stanza.txt  | Stanza intermediate sentence representation of MSRP test dataset     |
 
 The /results/ directory contains the results of the various training and test runs that were performed by the find_training_parameters() function in the main.ipynb file while trying to find the optimal hyperparameters for the model.
 
 | File Name                       | Description                                                                                                                               |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| config.stanza.google.csv        | CSV file representing the various parameters used during training and testing runs and the results for the stanza-google configured model |
-| config-stanza-msrp.csv          | CSV file representing the various parameters used during training and testing runs and the results for the stanza-msrp configured model   |
+| /results/config.stanza.google.csv        | CSV file representing the various parameters used during training and testing runs and the results for the stanza-google configured model |
+| /results/config-stanza-msrp.csv          | CSV file representing the various parameters used during training and testing runs and the results for the stanza-msrp configured model   |
 
 
 
