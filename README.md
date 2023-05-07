@@ -78,10 +78,10 @@ Preprocessing the data can take a while, and these files are used to cache the p
 
 The /results/ directory contains the results of the various training and test runs that were performed by the find_training_parameters() function in the main.ipynb file while trying to find the optimal hyperparameters for the model.
 
-| File Name                       | Description                                                                                                                               |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| /results/config.stanza.google.csv        | CSV file representing the various parameters used during training and testing runs and the results for the stanza-google configured model |
-| /results/config-stanza-msrp.csv          | CSV file representing the various parameters used during training and testing runs and the results for the stanza-msrp configured model   |
+| File Name                         | Description                                                                                                                               |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| /results/config-stanza-google.csv | CSV file representing the various parameters used during training and testing runs and the results for the stanza-google configured model |
+| /results/config-stanza-msrp.csv   | CSV file representing the various parameters used during training and testing runs and the results for the stanza-msrp configured model   |
 
 
 
